@@ -30,9 +30,6 @@ export default {
                 this.paintingList.push(newDocument);
             })
         },
-        viewDetails(item_id){
-            location.href = `/details/${item_id}`
-        }
     },
 }
 </script>
@@ -40,8 +37,8 @@ export default {
     
     <div class="container mx-auto py-12">
 
-        <div class="grid grid-cols-12 gap-5 gap-y-10 place-items-center" v-if="!viewDetail">
-            <div class="card w-full bg-base-100 shadow-xl col-span-4" style="height: 34rem;"
+        <div class="grid grid-cols-12 gap-5 gap-y-10 place-items-center px-7" v-if="!viewDetail">
+            <div class="card w-full bg-base-100 shadow-xl col-span-12 lg:col-span-4" style="height: 36rem;"
                     v-for="(item, index) in paintingList" :key="index">
                 <figure class="w-full h-72">
                     <div class="animate-pulse bg-green-100">
@@ -53,7 +50,10 @@ export default {
                     <h2 class="card-title"> {{ item.name }} </h2>
                     <p> {{ item.description }} </p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary"  @click.prevent="viewDetails(item.id)"> Ver detalle </button>
+                         <!-- </button> -->
+                        <router-link :to="{ name: 'details', params: { id: item.id }}"  class="btn btn-primary">
+                            Ver detalle
+                        </router-link>
                     </div>
                 </div>
             </div>
