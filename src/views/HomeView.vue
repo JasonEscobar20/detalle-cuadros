@@ -102,7 +102,10 @@ export default {
                 </label>
                 
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56">
-                    <li><a class="btn btn-ghost normal-case text-xl"> Lista de cuadros </a></li>
+                    
+                    <router-link :to="{ name: 'cuadros'}" class="btn btn-ghost normal-case text-xl">
+                        Lista de cuadros
+                    </router-link>
                 </ul>
             </div>
             <!-- <a class="btn btn-ghost normal-case text-xl hidden lg:flex"> Lista de cuadros </a> -->
