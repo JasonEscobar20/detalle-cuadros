@@ -9,14 +9,21 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/create_form/',
       name: 'home',
       component: HomeView
     },
     {
+      path: '/',
+      redirect: {
+        name: 'cuadros'
+      }
+    },
+    {
       path: '/cuadros/',
       name: 'cuadros',
-      component: PaintingView
+      component: PaintingView,
+      // redirect: '/'
     },
     {
       path: '/details/:id',
